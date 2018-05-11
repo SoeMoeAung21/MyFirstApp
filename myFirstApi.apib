@@ -1,0 +1,152 @@
+# firstAPI
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Get Categories [/homeitems]
+
+### List All Categories [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Towns",
+                "image": "https://moziru.com/images/town-clipart-cartoon-14.png",
+                "endpoint": "towns",
+                "type": "grid"
+            },
+            {
+                "name": "Cars",
+                "image": "https://i.ytimg.com/vi/WvT1-GLBHmk/maxresdefault.jpg",
+                "endpoint": "cars",
+                "type": "grid"
+            },
+            {
+                "name": "Funny Fact",
+                "image": "https://cdn0.iconfinder.com/data/icons/smile-emoticons/78/Emoticons_smile_smiley-16-512.png",
+                "endpoint": "listData",
+                "type": "section"
+            }
+        ]
+
+
+## Get Towns [/towns]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Kyaukse",
+                "image": "https://www.myanmore.com/yangon/wp-content/uploads/sites/2/2016/01/KATE-BOWEN-FEATURED.jpg",
+                "imageGallery" : "https://s-media-cache-ak0.pinimg.com/originals/fc/e3/eb/fce3eb6c4421bad0e2a3df2fbfc21aee.jpg",
+                "about": "Kyaukse (Burmese: ကျောက်ဆည် မြို့, pronounced [tɕaʊʔ sʰɛ̀ mjo̰]) is town and capital of Kyaukse District in Mandalay Region, Myanmar. It is famous for the Kyaukse Elephant Dance."
+            },
+            {
+                "name": "Sintgaing",
+                "image": "https://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/2n/39/p02n39mf.jpg",
+                "imageGallery" : "https://i.pinimg.com/originals/16/3b/45/163b4503bc2b379d202d360730b884a7.jpg",
+                "about": "Sintgaing Township is a township of Kyaukse District in the Mandalay Region of Burma (Myanmar)."
+            },
+            {
+                "name": "Tada U",
+                "image": "https://www.myanmarinsider.com/wp-content/uploads/2015/03/Economic-development-programs-planned-in-Tada-U.png",
+                "imageGallery" : "https://image.shutterstock.com/z/stock-photo-inspirational-quote-motivational-background-574577962.jpg",
+                "about": "This article is about the Tadau town of Tada-U Township of Mandalay Region. For the Tada-u town of Myittha Township of Mandalay Region, see Tada-u."
+            },
+            {
+                "name": "Myittha",
+                "image": "https://mw2.google.com/mw-panoramio/photos/medium/44442660.jpg",
+                "imageGallery": "https://3.bp.blogspot.com/-HoJkJO_c-10/UujR4uTgxoI/AAAAAAAABOA/JKHgxrBR2a8/s1600/IMGP1975_3872x2592.jpg",
+                "about": "Myittha Township is a township of Kyaukse District in the Mandalay Division of Burma. The capital is Myittha. MyitthMa Township consists of 6 wards, 227 villages."
+            }
+        ]
+
+
+## Get Cars [/cars]
+
+### List All Cars [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Audi",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBFIuPkIXppzoB90iIA_98lkzbwR_bRiBAJz8r4xsqGs63wLnd",
+                "imageGallery": "https://3.bp.blogspot.com/-HoJkJO_c-10/UujR4uTgxoI/AAAAAAAABOA/JKHgxrBR2a8/s1600/IMGP1975_3872x2592.jpg",
+                "about": "The available Audi virtual cockpit is a fully digital 12.3-inch instrument display that allows the driver to customize information such as audio and available navigation, offering Classic and Infotainment modes, while Google Earth™ map views are also available."
+            },
+            {
+                "name": "Lamborghini",
+                "image": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/one-off/centenario/gallery/centenario.jpg",
+                "imageGallery": "https://3.bp.blogspot.com/-HoJkJO_c-10/UujR4uTgxoI/AAAAAAAABOA/JKHgxrBR2a8/s1600/IMGP1975_3872x2592.jpg",
+                "about": "In just fifty years, Automobili Lamborghini has not only manufactured exceptional cars, but true masterpieces that have made history. There are many people who have contributed to creating Lamborghini's excellence, starting from Ferruccio Lamborghini, founder and visionary genius."
+            },
+            {
+                "name": "Lexus",
+                "image": "https://www.netcarshow.com/Lexus-LS_plus_Concept-2017-1600-02.jpg",
+                "imageGallery": "https://3.bp.blogspot.com/-HoJkJO_c-10/UujR4uTgxoI/AAAAAAAABOA/JKHgxrBR2a8/s1600/IMGP1975_3872x2592.jpg",
+                "about": "Bold design is just one way the IS 300 stands apart. With a turbocharger designed in-house, it provides robust power, low-end torque and responsive performance you can feel the moment you accelerate."
+            }
+        ]
+
+## Get List Data [/listData]
+
+### List All Data [GET]
+
++ Response 200 (application/json)
+
+        [
+          {
+            "title" : "A",
+            "data": [
+              {
+                  "name": "Apple",
+                  "description": "An Apple A Day makes doctor go away."
+              },
+              {
+                  "name": "Ant",
+                  "description": "Little Colony of the animal world"
+              },
+              {
+                  "name": "Acrobat",
+                  "description": "The sport I can't do"
+              }
+            ]
+          },
+          {
+            "title" : "B",
+            "data": [
+              {
+                  "name": "Ball",
+                  "description": "Who doesn't like football?"
+              },
+              {
+                  "name": "Brazil",
+                  "description": "Where all girls are beautiful"
+              },
+              {
+                  "name": "Bravo",
+                  "description": "Spanish language for Excellent"
+              }
+            ]
+          },
+          {
+            "title" : "C",
+            "data": [
+              {
+                  "name": "Car",
+                  "description": "The auto-mobile I can't buy"
+              },
+              {
+                  "name": "Cat",
+                  "description": "The annoying animal I like."
+              },
+              {
+                  "name": "Candy",
+                  "description": "Not good for children but they seems to like a lot."
+              }
+            ]
+          }
+        ]
