@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, FlatList, ScorllView, Image, TouchableHighlight, TouchableOpacity,  PixelRatio } from 'react-native';
+import { Platform, StyleSheet, Text, View, FlatList, ScorllView, Image, TouchableHighlight, TouchableOpacity,  PixelRatio, Modal } from 'react-native';
 import { Actions, Router, Scene } from 'react-native-router-flux';
 import ImagePicker from 'react-native-image-picker';
 
@@ -16,7 +16,8 @@ export default class Home extends React.Component {
     super(props);
     this.state={
       avatarSource: null,
-      videoSource: null
+      videoSource: null,
+      modalVisible: false
     }
   }
 
@@ -86,6 +87,11 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+      <TouchableHighlight onPress={()=>this.testingModal()}>
+        <View>
+          <Text>TEST Modal </Text>
+        </View>
+      </TouchableHighlight>
         <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
           <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
           { this.state.avatarSource === null ? <Text>Select a Photo</Text> :
@@ -107,6 +113,16 @@ export default class Home extends React.Component {
     );
   }
 
+  testingModal(){
+    Actions.test2View()
+
+    
+
+  }
+
+    setModalVisible(visible) {
+      this.setState({modalVisible: visible});
+    }
 
 }
 const styles = StyleSheet.create({

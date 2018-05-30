@@ -75,6 +75,7 @@ export default class Home extends React.Component {
             </TextInput>
             <TextInput style={styles.passwordStyle} secureTextEntry={true}>
             </TextInput>
+          
           </View>
         </View>
       </KeyboardAvoidingView>
