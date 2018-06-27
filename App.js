@@ -16,6 +16,7 @@ import LoginView from './MainViews/LoginView';
 import FileView from './MainViews/File';
 import TestView from './MainViews/TestView';
 import Test2View from './MainViews/Test2View';
+import Config from './Service/Config'
 
 
 export default class App extends React.Component {
@@ -23,13 +24,13 @@ export default class App extends React.Component {
     return (
       <Router>
       <Scene key='root'>
-        <Scene key='Home' component={Home} title='Home' onRight={()=>this.file()} rightTitle='File'/>
+        <Scene key='Home' initial={true} component={Home} title={Config.appName} onRight={()=>this.file()} rightTitle='File'/>
         <Scene key='CommonGridView'  component={CommonGridView} titleStyle={styles.titleStyle} navigationBarStyle={styles.navBarStyle}/>
         <Scene key='TownDetailView' component={TownDetailView}/>
         <Scene key='FunnyFactsView' component={FunnyFactsView}/>
         <Scene key='File' component={FileView}/>
         <Scene key='testView' component={TestView} title='TestView'/>
-        <Scene key='test2View' initial={true} component={Test2View} title='Test2View'/>
+        <Scene key='test2View'  component={Test2View} title='Test2View'/>
         <Scene key='Login'   component={LoginView} type={'reset'} title='Login'/>
       </Scene>
       </Router>

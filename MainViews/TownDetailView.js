@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import {Router, Scene} from 'react-native-router-flux';
 import Swiper  from 'react-native-swiper';
+import Utility from '../Service/Utility'
+
 
 
 
@@ -31,6 +33,10 @@ export default class TownDetailView extends React.Component {
           </View>
         </Swiper>
     );
+  }
+
+  callingPhone(){
+    Utility.callPhone('09xxxxxxx')
   }
 }
 

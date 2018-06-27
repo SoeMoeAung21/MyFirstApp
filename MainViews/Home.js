@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, FlatList, ScorllView, Image, TouchableHighlight } from 'react-native';
 import { Actions, Router, Scene } from 'react-native-router-flux';
-
+import HomeService from '../Service/HomeService'
 
 import styles from './MainViewStyles/HomeStyle';
 
@@ -21,10 +21,14 @@ export default class Home extends React.Component {
   }
 
   componentDidMount(){
-    return fetch('http://localhost:3000/homeitems')
-    .then((response)=>response.json())
-    .then((responseJson)=>this.changingJson(responseJson))
-    .catch((error)=>{console.log("error :: " + error);})
+    var service = this
+    HomeService.getHomeDataList().then((a)=> {
+      console.log(a);
+      service.setState({
+        homeData: a
+      })
+    })
+
   }
 
   changingJson(responseJson){

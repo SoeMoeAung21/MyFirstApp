@@ -17,7 +17,7 @@ eachViewStyle:{
   borderRadius: 10,
   shadowOffset:{  width: 10,  height: 10},
   shadowColor: '#555555',
-  shadowOpacity: 0.7,
+  shadowOpacity: 0.45,
 },
 imagestyle:{
   marginLeft: 10,

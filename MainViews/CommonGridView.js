@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Platform, StyleSheet, Text, View, TouchableHighlight, Image, FlatList} from 'react-native';
 import {Router, Scene, Actions} from 'react-native-router-flux';
 import RNFS from 'react-native-fs';
+import Config from '../Service/Config'
+import Utility from '../Service/Utility'
 
 import styles from './MainViewStyles/Division4Style';
 
@@ -17,22 +19,13 @@ export default class Division4 extends React.Component {
   }
 
   componentDidMount(){
-    //'http://192.168.100.9:3000/towns'
-      return fetch('http://localhost:3000/' + this.state.dataItem.endpoint, {
-            method : 'get',
-            headers: {
-                'Accept'      : 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
-      .then(result => result.json())
-      .then((responseJson)=> this.changingToJson(responseJson))
-      .catch((error)=>{
-        console.log(error);
-      })
-    }
+
+    var service = this
+    Utility.getDataFromServer(service.state.dataItem.endpoint).then((result) => service.changingToJson(result))
+  }
 
   changingToJson(responseJson){
+    console.log(responseJson);
     this.setState({
       dataSource: responseJson,
     })
